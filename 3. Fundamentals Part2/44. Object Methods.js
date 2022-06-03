@@ -75,3 +75,42 @@ console.log(`${getSummery.firstName} is ${getSummery.age}years old.`);
 
 // 퀴즈에서 원하는 식은 객체 안에 getSummery 키값을 넣는 것이었음 
 console.log(ji.getSummary());
+
+
+
+//연습 
+
+// const ji = {
+//     firstName : 'Ji',
+//     lastName : 'Kim',
+//     birthYear : 1994,
+//     job : 'teacher',
+//     friends : ['Choi', 'Lee', 'Park'],
+//     hasDriversLicense : true,
+
+//     // calcAge : function(){
+//     //    // console.log(this); //obj ji 키 밸류들이 나옴
+//     //     return 2037- this.birthYear;
+//     // }
+//     calcAge : function () {
+//         this.age = 2037 - this. birthYear; //to create new property ".age"
+//         return this.age; //return;만 하면 Undefined 
+//     }, //함수도 콤마 필요, 메소드마다,
+
+//     getSummary : function(){
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${ji.job}, and she has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+//     }
+// };
+
+// console.log(ji.calcAge()); //1994가 이미 Ji object에 있다 
+// //console.log(ji['calcAge'](1994));// 숫자를 1993으로 잘못 쓸 수 있으니 이렇게 직접 숫자를 쓰면 안된다
+// //don't repeat yourself , keep code dry
+// //this를 이용해서 접근하기
+
+// console.log(ji.age); //result is same as above (ji.calcAge())
+// console.log(ji.age);
+// console.log(ji.age);
+
+// //ex Challenge 
+// //'Ji is a 46-year old teacher. and she has a/no driver's license' 
+// console.log(ji.getSummary());
