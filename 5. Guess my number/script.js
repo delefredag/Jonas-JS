@@ -10,7 +10,7 @@
 // console.log(document.querySelector('.guess').value);
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1; // this logic supposed to be hidden behind question mark
-let score = 20; //let : decrease 
+let score = 20; //let : decrease , state variable 아래 또 써줌 state of our application
 
 document.querySelector('.number').textContent = secretNumber; // BAAM 
 
@@ -23,10 +23,22 @@ document.querySelector('.check').addEventListener('click', function () {
     } else if (guess === secretNumber) {
         document.querySelector('.message').textContent = '🎉Correct Number!';
     } else if (guess > secretNumber) {
-        document.querySelector('.message').textContent = '📈Too high!';
-        score = score - 1;
+        if(score > 1){
+            document.querySelector('.message').textContent = '📈Too high!';
+            score = score - 1;
+            document.querySelector('.score').textContent = score;
+        } else {
+            document.querySelector('.message').textContent = '💥 You lost the game!'; 
+        }
+        
     } else if (guess < secretNumber) {
-        document.querySelector('.message').textContent = '📉Too low!';
-        score--;
+        if(score > 1){
+            document.querySelector('.message').textContent = '📈Too low!';
+            score = score - 1;
+            document.querySelector('.score').textContent = score;
+        } else {
+            document.querySelector('.message').textContent = '💥 You lost the game!'; 
+        }
+        document.querySelector('.score').textContent = score;
     }
 });
