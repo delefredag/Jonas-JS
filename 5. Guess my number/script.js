@@ -11,6 +11,7 @@
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1; // this logic supposed to be hidden behind question mark
 let score = 20; //let : decrease , state variable 아래 또 써줌 state of our application
+let highscore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
@@ -27,6 +28,11 @@ document.querySelector('.check').addEventListener('click', function () {
 
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem'; //'string'
+
+        if(score > highscore){
+            highscore = score;
+            document.querySelector('.highscore').textContent = highscore;
+        }
 
         // when guess is too high
     } else if (guess > secretNumber) {
